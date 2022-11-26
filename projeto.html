@@ -8,10 +8,76 @@
         *{
             margin: 0; padding: 0; box-sizing: border-box; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+
+        body{
+            background: #f34848;
+            background: linear-gradient(25deg,#f34848 0%, #7ab5f1 80%);
+            background: -webkit-linear-gradient(25deg,#f34848 0%, #7ab5f1 80%);
+            background: -moz-linear-gradient(25deg,#f34848 0%, #7ab5f1 80%);
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .botao{
+            display: flex;
+            justify-content: center;
+        }
+
+        button{
+            border: none;
+            padding: 13px 15px;
+            font-size: large;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: red;
+            color:aliceblue;
+        }
+
+        button:hover{
+            border: none;
+            padding: 15px 17px;
+            font-size:larger;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: transparent;
+            border: 2px solid red;
+        }
+
+        .contador{
+            position: fixed;
+            bottom: 10px;
+            left: 15px;
+            font-size: x-large;
+        }
+
     </style>
 </head>
 <body>
-    <h1 style="font-size: 28px; background-color:aliceblue; color:red; text-align: center; padding: 5px 0;">O projeto começa em breve!!!</h1>
-    <p style="color:darkgrey; text-align: center; margin-top: 30px;">Esteja atento...</p>
+    <main>
+        <section class="aviso">
+            <h1 style="font-size: 28px; color:red; text-align: center; padding: 30px 0 0 0;">O projeto começa em breve!!!</h1>
+            <p style="color:rgb(49, 49, 49); text-align: center; margin: 50px 0;">Esteja atento/a...</p>
+        </section>
+
+        <section class="botao">
+            <button type="button" onclick="Contar()">Eu estou ansioso/a!</button>
+        </section>
+
+        <article>
+            <p class="contador">Número de pessoas que clicaram no botão: <span class="numeroDePessoas">0</span>.</p>
+        </article>
+    </main>
+
+    <script>
+        let texto = window.document.getElementsByTagName("span")[0];
+        let pessoas = 0;
+
+        function Contar()
+        {    
+            pessoas = pessoas + 1;
+
+            texto.innerText = pessoas;
+        }
+
+    </script>
 </body>
 </html>
